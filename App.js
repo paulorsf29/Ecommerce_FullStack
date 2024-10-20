@@ -1,9 +1,17 @@
 import { StyleSheet, Text, View } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import TelaInicial from './Telas/TelaInicial'
 
+const Stack = createStackNavigator();
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName='TelaInicial'>
+          <Stack.Screen name='TelaInicial' component={TelaInicial}/>
+        </Stack.Navigator>
+      </NavigationContainer>
     </View>
   );
 }
